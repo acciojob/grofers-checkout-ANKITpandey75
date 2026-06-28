@@ -1,2 +1,18 @@
 
-/* Your CSS Code here. */
+table{
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th,td{
+    padding:10px;
+    text-align:left;
+}
+
+button{
+    margin-top:20px;
+}/* Your CSS Code here. */
