@@ -4,31 +4,29 @@ document.body.appendChild(getSumBtn);
 
 const getSum = () => {
 
-    // Remove old total row if it exists
-    const oldRow = document.getElementById("ans");
-    if (oldRow) {
-        oldRow.remove();
-    }
+    // Remove previous answer row
+    const old = document.getElementById("ans");
+    if (old) old.remove();
 
-    const prices = document.querySelectorAll(".price");
+    const prices = document.querySelectorAll(".prices");
 
     let total = 0;
 
-    prices.forEach((price) => {
+    prices.forEach(price => {
         total += Number(price.textContent);
     });
 
     const table = document.querySelector("table");
 
-    const tr = document.createElement("tr");
-    tr.id = "ans";
+    const row = document.createElement("tr");
+    row.id = "ans";
 
-    const td = document.createElement("td");
-    td.colSpan = "2";
-    td.textContent = total;
+    const cell = document.createElement("td");
+    cell.colSpan = "2";
+    cell.textContent = total;
 
-    tr.appendChild(td);
-    table.appendChild(tr);
+    row.appendChild(cell);
+    table.appendChild(row);
 };
 
 getSumBtn.addEventListener("click", getSum);
